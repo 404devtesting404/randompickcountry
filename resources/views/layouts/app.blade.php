@@ -9,20 +9,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
+<style>
+ header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* logo center */
+    padding: 0px 0px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+header .logo img {
+    max-height: 120px;
+    width: auto;
+}
+
+header nav {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+}
+</style>
 <body>
     {{-- ✅ Success message --}}
     <header>
         {{-- <a href="{{ route('country.random') }}" class="logo">🌎 RandomCountry</a> --}}
         <a href="{{ route('country.random') }}" class="logo">
-            <img src="{{ asset('public/images/logo.png') }}" alt="RandomCountry Logo" style="height:100px;">
+            <img src="{{ asset('images/logo.png') }}" alt="RandomCountry Logo" style="height:100px;">
         </a>
 
-        <nav>
+        {{-- <nav>
             <a href="{{ route('country.random') }}">Home</a>
             <a href="#contact">Contact</a>
-        </nav>
+        </nav> --}}
     </header>
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible" role="alert">
