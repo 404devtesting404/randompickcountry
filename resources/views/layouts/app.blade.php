@@ -19,12 +19,18 @@
     @yield('meta')
 
     <!-- Preload Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    </noscript>
 
     <!-- Preload Bootstrap CSS -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    </noscript>
 
     <!-- Defer Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
@@ -37,17 +43,27 @@
 
 <body>
     {{-- ✅ Success message --}}
-    <header>
-        {{-- <a href="{{ route('country.random') }}" class="logo">🌎 RandomCountry</a> --}}
+    {{-- <header>
         <a href="{{ route('country.random') }}" class="logo">
             <img src="{{ asset('public/images/logo.webp') }}" alt="RandomCountry Logo" style="height:100px;">
         </a>
 
-        {{-- <nav>
+          <nav>
             <a href="{{ route('country.random') }}">Home</a>
             <a href="#contact">Contact</a>
-        </nav> --}}
+        </nav>
+    </header> --}}
+
+    <header>
+        <a href="{{ route('country.random') }}" class="logo">
+            <picture>
+                <source srcset="{{ asset('public/images/logo-optimized.webp') }}" type="image/webp">
+                <img src="{{ asset('public/images/logo.png') }}" alt="RandomCountry Logo" width="200" height="100"
+                    style="height:100px;">
+            </picture>
+        </a>
     </header>
+
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
