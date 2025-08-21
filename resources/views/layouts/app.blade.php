@@ -16,7 +16,7 @@
     <header>
         {{-- <a href="{{ route('country.random') }}" class="logo">🌎 RandomCountry</a> --}}
         <a href="{{ route('country.random') }}" class="logo">
-            <img src="{{ asset('public/images/logo.png') }}" alt="RandomCountry Logo" style="height:100px;">
+            <img src="{{ asset('public/images/logo.webp') }}" alt="RandomCountry Logo" style="height:100px;">
         </a>
 
         {{-- <nav>

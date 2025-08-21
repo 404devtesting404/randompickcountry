@@ -20,7 +20,7 @@
 
                     {{-- Image / Illustration --}}
                     <div class="col-md-6 text-center mb-4 mb-md-0">
-                        <img src="https://i.ibb.co/SRYwH2M/404-error.png"
+                        <img src="{{ asset('public/images/404-error.webp') }}"
                              alt="404 Not Found"
                              class="img-fluid rounded shadow"
                              style="max-width: 280px;">
