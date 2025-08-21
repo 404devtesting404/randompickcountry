@@ -57,7 +57,7 @@
     <header>
         <a href="{{ route('country.random') }}" class="logo">
             <picture>
-                <source srcset="{{ asset('public/images/logo-optimized.webp') }}" type="image/webp">
+                <source srcset="{{ asset('public/images/logo.webp') }}" type="image/webp">
                 <img src="{{ asset('public/images/logo.png') }}" alt="RandomCountry Logo" width="200" height="100"
                     style="height:100px;">
             </picture>
