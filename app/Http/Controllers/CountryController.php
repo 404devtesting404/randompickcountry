@@ -25,7 +25,7 @@ class CountryController extends BaseController
 
         // dd($countryName);
         if ($response->failed()) {
-            dd('show');
+            // dd('show');
             //   return $this->showRandom();
             abort(404, 'Country not found');
         }
@@ -55,7 +55,7 @@ class CountryController extends BaseController
         // $all = Http::get("https://restcountries.com/v3.1/name/" . urlencode($countryName) . "?fullText=true");
 
         if (!is_array($all) || empty($all)) {
-            dd('showRandom');
+            // dd('showRandom');
             abort(500, 'Unable to fetch countries.');
         }
         $country = $all[array_rand($all)];
@@ -81,7 +81,7 @@ class CountryController extends BaseController
         $all = Http::get('https://restcountries.com/v3.1/all?fields=name')->json();
 
         if (!is_array($all) || empty($all)) {
-            dd('redirectToRandom');
+            // dd('redirectToRandom');
 
             abort(500, 'Unable to fetch countries.');
         }
