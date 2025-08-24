@@ -112,7 +112,11 @@
             <a href="#contact">Contact</a> |
         </p>
     </footer>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 71b2793af72a338204572951e6bd28ebff140607
     <!-- Cookie Consent Banner -->
 <div id="cookie-overlay" style="
     display: none;
