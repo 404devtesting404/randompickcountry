@@ -38,7 +38,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-51HN5TTL6Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-51HN5TTL6Q');
+</script>
 </head>
 
 <body>
@@ -104,6 +112,79 @@
             <a href="#contact">Contact</a> |
         </p>
     </footer>
+    
+    <!-- Cookie Consent Banner -->
+<div id="cookie-overlay" style="
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+"></div>
+
+<div id="cookie-banner" style="
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+    z-index: 9999;
+    max-width: 400px;
+    text-align: center;
+    font-family: sans-serif;
+">
+    <p style="margin:0 0 15px 0; font-size:15px;">
+        We use your data with cookies for ads and analytics. Do you consent to this?
+    </p>
+    <button onclick="acceptCookies()" style="background:#4CAF50;color:#fff;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;margin-right:10px;">
+        Accept
+    </button>
+    <button onclick="denyCookies()" style="background:#f44336;color:#fff;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;">
+        Deny
+    </button>
+</div>
+
+<script>
+  function setConsent(granted) {
+    gtag('consent', 'update', {
+      'ad_storage': granted ? 'granted' : 'denied',
+      'analytics_storage': granted ? 'granted' : 'denied'
+    });
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("cookie_consent", "granted");
+    setConsent(true);
+    document.getElementById("cookie-banner").style.display = "none";
+    document.getElementById("cookie-overlay").style.display = "none";
+  }
+
+  function denyCookies() {
+    localStorage.setItem("cookie_consent", "denied");
+    setConsent(false);
+    document.getElementById("cookie-banner").style.display = "none";
+    document.getElementById("cookie-overlay").style.display = "none";
+  }
+
+  window.onload = function() {
+    const consent = localStorage.getItem("cookie_consent");
+    if (!consent) {
+      document.getElementById("cookie-banner").style.display = "block";
+      document.getElementById("cookie-overlay").style.display = "block";
+    } else {
+      setConsent(consent === "granted");
+    }
+  }
+</script>
+
 </body>
 <script>
     document.getElementById('contactForm').addEventListener('submit', function() {
